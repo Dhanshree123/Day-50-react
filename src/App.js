@@ -1,6 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react'; 
+import logo from './assets/logo.jpg'
 
+class App extends React.Component{
+  url = 'https://www.bridgelabz.com'
+  constructor(){
+    super()
+    this.state = {
+      userName: ''
+    }
+  }
+  onClick =(Sevent) => {
+    console.log('save button clicked', Sevent);
+    window.open(this.url, "_blank");
+  }
+  onNameChange = (event) => {
+    console.log('value is ',event.target.value);
+    this.setState({userName: event.target.value})
+  }
+  render(){
+    return (
+      <>
+      <div>
+        <h1>{this.state.userName} from bridgelabz</h1>
+        <img src={logo} onClick={this.onClick}
+         alt="bl logo" />
+      </div>
+      <div>
+        <input onChange={this.onNameChange}/>
+      </div>
+      </>
+    );
+  }
+}
+/*
 function App() {
   return (
     <div className="App">
@@ -21,5 +54,5 @@ function App() {
     </div>
   );
 }
-
+*/
 export default App;
