@@ -6,7 +6,12 @@ h1{
   text-align: center;
   font-size: xx-large;
 }
-
+.error-output{
+  margin-left: 10px;
+  font-size: 12px;
+  font-style: italic;
+  color: red;
+}
 img{
   display: block;
   margin: 0 auto;
